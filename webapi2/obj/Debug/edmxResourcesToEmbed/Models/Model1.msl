@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Notification_SystemModel1StoreContainer" CdmEntityContainer="Notification_SystemEntities1">
+    <EntitySetMapping Name="mailQueues">
+      <EntityTypeMapping TypeName="Notification_SystemModel1.mailQueue">
+        <MappingFragment StoreEntitySet="mailQueue">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="content" ColumnName="content" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notification_tb">
+      <EntityTypeMapping TypeName="Notification_SystemModel1.Notification_tb">
+        <MappingFragment StoreEntitySet="Notification_tb">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="subjec" ColumnName="subjec" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="lang" ColumnName="lang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="smsQueues">
+      <EntityTypeMapping TypeName="Notification_SystemModel1.smsQueue">
+        <MappingFragment StoreEntitySet="smsQueue">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="content" ColumnName="content" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Notification_SystemModelStoreContainer" CdmEntityContainer="Notification_SystemEntities">
+    <EntitySetMapping Name="Notification_tb">
+      <EntityTypeMapping TypeName="Notification_SystemModel.Notification_tb">
+        <MappingFragment StoreEntitySet="Notification_tb">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="subjec" ColumnName="subjec" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="lang" ColumnName="lang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user2">
+      <EntityTypeMapping TypeName="Notification_SystemModel.user2">
+        <MappingFragment StoreEntitySet="user2">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

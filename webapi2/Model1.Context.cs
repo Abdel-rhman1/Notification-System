@@ -13,10 +13,10 @@ namespace webapi2
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Notification_SystemEntities2 : DbContext
+    public partial class Notification_SystemEntities3 : DbContext
     {
-        public Notification_SystemEntities2()
-            : base("name=Notification_SystemEntities2")
+        public Notification_SystemEntities3()
+            : base("name=Notification_SystemEntities3")
         {
         }
     

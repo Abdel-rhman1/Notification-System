@@ -4,13 +4,14 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Notification_SystemModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Notification_SystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="mailQueue">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
           <Property Name="content" Type="text" />
+          <Property Name="toUser" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Notification_tb">
           <Key>
@@ -27,8 +28,9 @@
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
           <Property Name="content" Type="text" />
+          <Property Name="toUser" Type="varchar" MaxLength="50" />
         </EntityType>
-        <EntityContainer Name="Notification_SystemModel1StoreContainer">
+        <EntityContainer Name="Notification_SystemModelStoreContainer">
           <EntitySet Name="mailQueue" EntityType="Self.mailQueue" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Notification_tb" EntityType="Self.Notification_tb" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="smsQueue" EntityType="Self.smsQueue" Schema="dbo" store:Type="Tables" />
@@ -37,13 +39,14 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="Notification_SystemModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="Notification_SystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="mailQueue">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="toUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Notification_tb">
           <Key>
@@ -60,8 +63,9 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="toUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="Notification_SystemEntities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Notification_SystemEntities3" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="mailQueues" EntityType="Self.mailQueue" />
           <EntitySet Name="Notification_tb" EntityType="Self.Notification_tb" />
           <EntitySet Name="smsQueues" EntityType="Self.smsQueue" />
@@ -71,17 +75,18 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Notification_SystemModel1StoreContainer" CdmEntityContainer="Notification_SystemEntities2">
+        <EntityContainerMapping StorageEntityContainer="Notification_SystemModelStoreContainer" CdmEntityContainer="Notification_SystemEntities3">
           <EntitySetMapping Name="mailQueues">
-            <EntityTypeMapping TypeName="Notification_SystemModel1.mailQueue">
+            <EntityTypeMapping TypeName="Notification_SystemModel.mailQueue">
               <MappingFragment StoreEntitySet="mailQueue">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="toUser" ColumnName="toUser" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Notification_tb">
-            <EntityTypeMapping TypeName="Notification_SystemModel1.Notification_tb">
+            <EntityTypeMapping TypeName="Notification_SystemModel.Notification_tb">
               <MappingFragment StoreEntitySet="Notification_tb">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="subjec" ColumnName="subjec" />
@@ -91,10 +96,11 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="smsQueues">
-            <EntityTypeMapping TypeName="Notification_SystemModel1.smsQueue">
+            <EntityTypeMapping TypeName="Notification_SystemModel.smsQueue">
               <MappingFragment StoreEntitySet="smsQueue">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="toUser" ColumnName="toUser" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

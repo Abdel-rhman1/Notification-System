@@ -1,6 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Notification_SystemModelStoreContainer" CdmEntityContainer="Notification_SystemEntities">
+  <EntityContainerMapping StorageEntityContainer="Notification_SystemModelStoreContainer" CdmEntityContainer="Notification_SystemEntities3">
+    <EntitySetMapping Name="mailQueues">
+      <EntityTypeMapping TypeName="Notification_SystemModel.mailQueue">
+        <MappingFragment StoreEntitySet="mailQueue">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="toUser" ColumnName="toUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Notification_tb">
       <EntityTypeMapping TypeName="Notification_SystemModel.Notification_tb">
         <MappingFragment StoreEntitySet="Notification_tb">
@@ -11,11 +20,12 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="user2">
-      <EntityTypeMapping TypeName="Notification_SystemModel.user2">
-        <MappingFragment StoreEntitySet="user2">
+    <EntitySetMapping Name="smsQueues">
+      <EntityTypeMapping TypeName="Notification_SystemModel.smsQueue">
+        <MappingFragment StoreEntitySet="smsQueue">
           <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="toUser" ColumnName="toUser" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

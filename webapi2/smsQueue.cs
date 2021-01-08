@@ -17,5 +17,6 @@ namespace webapi2
         public int id { get; set; }
         public string content { get; set; }
         public string toUser { get; set; }
+        public Nullable<byte> stat { get; set; }
     }
 }

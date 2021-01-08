@@ -18,7 +18,7 @@ namespace webapi2.Controllers
     [RoutePrefix("api/Noti")]
     public class Notification_tbController : ApiController
     {
-        private Notification_SystemEntities3 db = new Notification_SystemEntities3();
+        private Notification_SystemEntities4 db = new Notification_SystemEntities4();
         [HttpGet]
         //[Route ("find/{id}")]
         public HttpResponseMessage Find(int id)

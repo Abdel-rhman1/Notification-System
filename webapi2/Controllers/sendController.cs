@@ -13,11 +13,11 @@ namespace webapi2.Controllers
     [RoutePrefix("api/send")]
     public class sendController : ApiController
     {
-        static private Notification_SystemEntities3 db = new Notification_SystemEntities3();
-        static int smsCount = db.smsQueues.Count();
+        static private Notification_SystemEntities4 db = new Notification_SystemEntities4();
        [HttpPost]
         public string SMSCreate(int id,[FromBody] dynamic value)
         {
+            int smsCount = db.smsQueues.Count();
             String[] variables;
             string tmp = "";
             string to;
@@ -51,10 +51,13 @@ namespace webapi2.Controllers
                         }
                     }
                 }
+                Random rnd = new Random();
+                int status = rnd.Next(0, 2);
                 smsQueue sms = new smsQueue();
                 sms.id = smsCount;
                 sms.toUser = to;
                 sms.content = tmp;
+                sms.stat = (byte)status;
                 db.smsQueues.Add(sms);
                 var res = new HttpResponseMessage(HttpStatusCode.OK);
                 db.SaveChanges();

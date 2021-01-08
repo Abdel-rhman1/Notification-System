@@ -14,11 +14,12 @@ namespace webapi2.Controllers
     public class mailController : ApiController
     {
 
-        static private Notification_SystemEntities3 db = new Notification_SystemEntities3();
-        static int smsCount = db.mailQueues.Count();
+        static private Notification_SystemEntities4 db = new Notification_SystemEntities4();
+        //static int smsCount = db.mailQueues.Count();
         [HttpPost]
         public string mailcreate(int id, [FromBody] dynamic value)
         {
+            int smsCount = db.mailQueues.Count();
             String[] variables;
             string tmp = "";
             string to;
@@ -53,9 +54,12 @@ namespace webapi2.Controllers
                     }
                 }
                 mailQueue sms = new mailQueue();
-                sms.id = 15;
+                Random rnd = new Random();
+                int status = rnd.Next(0, 2);
+                sms.id = smsCount;
                 sms.content = tmp;
                 sms.toUser = to;
+                sms.stat = (byte)status;
                 db.mailQueues.Add(sms);
                 var res = new HttpResponseMessage(HttpStatusCode.OK);
                 db.SaveChanges();

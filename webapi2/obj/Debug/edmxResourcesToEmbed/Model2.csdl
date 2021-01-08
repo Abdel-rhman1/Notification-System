@@ -6,6 +6,8 @@
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" />
     <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="toUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="stat" Type="Byte" />
   </EntityType>
   <EntityType Name="Notification_tb">
     <Key>
@@ -22,8 +24,10 @@
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" />
     <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="toUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="stat" Type="Byte" />
   </EntityType>
-  <EntityContainer Name="Notification_SystemEntities2" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="Notification_SystemEntities4" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="mailQueues" EntityType="Self.mailQueue" />
     <EntitySet Name="Notification_tb" EntityType="Self.Notification_tb" />
     <EntitySet Name="smsQueues" EntityType="Self.smsQueue" />

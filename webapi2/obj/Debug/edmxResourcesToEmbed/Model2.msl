@@ -1,11 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Notification_SystemModel1StoreContainer" CdmEntityContainer="Notification_SystemEntities2">
+  <EntityContainerMapping StorageEntityContainer="Notification_SystemModel1StoreContainer" CdmEntityContainer="Notification_SystemEntities4">
     <EntitySetMapping Name="mailQueues">
       <EntityTypeMapping TypeName="Notification_SystemModel1.mailQueue">
         <MappingFragment StoreEntitySet="mailQueue">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="toUser" ColumnName="toUser" />
+          <ScalarProperty Name="stat" ColumnName="stat" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -24,6 +26,8 @@
         <MappingFragment StoreEntitySet="smsQueue">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="toUser" ColumnName="toUser" />
+          <ScalarProperty Name="stat" ColumnName="stat" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
